@@ -36,6 +36,9 @@
     "worker",
     "build",
     "examples",
-    "drizzle.config.ts"
+    "drizzle.config.ts",
+    "vite.config.ts",
+    "worker/index.ts",
+    "build/sites-vite-plugin.ts"
   ]
 }
