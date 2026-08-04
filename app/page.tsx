@@ -115,10 +115,10 @@ export default function Home() {
           <h2>MAKE SPACE.<br/>KEEP STYLE.</h2>
           <p>Small-batch 3D-printed organizers built to bring order, color and personality to everyday spaces.</p>
         </div>
-        <nav className="footer-links" aria-label="Footer navigation">
+        <div className="footer-links" aria-label="Footer navigation">
           <div><h3>SHOP</h3><a href="#shop">Desk</a><a href="#shop">Storage</a><a href="#shop">Accessories</a><a href="#shop">Kits</a></div>
           <div><h3>INFO</h3><a href="#story">Our process</a><a href="#reviews">Reviews</a><a href="#faq">Shipping &amp; FAQ</a><a href="#faq">Contact</a></div>
-        </nav>
+        </div>
         <div className="footer-signup">
           <span>DROP ALERTS</span>
           <h3>GET THE NEXT EDIT FIRST.</h3>
