@@ -33,3 +33,6 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 .shop .kicker{display:table;position:relative;text-decoration:none;padding-bottom:12px}
 .shop .kicker::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9px;background:var(--lime)}
 @media(max-width:760px){.shop .kicker{padding-bottom:9px}.shop .kicker::after{height:7px}}
+
+/* Full-screen hero with mobile browser chrome accounted for. */
+.hero{height:100vh;height:100svh;min-height:100vh;min-height:100svh}
