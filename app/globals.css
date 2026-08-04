@@ -33,3 +33,18 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 .shop .kicker{display:table;position:relative;text-decoration:none;padding-bottom:12px}
 .shop .kicker::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9px;background:var(--lime)}
 @media(max-width:760px){.shop .kicker{padding-bottom:9px}.shop .kicker::after{height:7px}}
+
+/* Compact two-column mobile shop. */
+@media(max-width:760px){
+  .shop .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;grid-auto-columns:auto;gap:10px;overflow:visible;margin:0;padding:0;scroll-snap-type:none}
+  .shop .product{min-width:0;padding:7px;scroll-snap-align:none}
+  .shop .product-art{height:auto;aspect-ratio:1/1}
+  .shop .product-copy{display:block;padding-top:8px}
+  .shop .product-copy p{font-size:8px}
+  .shop .product-copy h3{font-size:20px;line-height:.95;margin:4px 0 6px;overflow-wrap:anywhere}
+  .shop .product-copy>b{font-size:14px}
+  .shop .product-desc,.shop .view-hint{display:none}
+  .shop .quick{right:7px;bottom:7px;width:34px;height:34px;font-size:21px}
+  .shop .shape{border-width:8px;border-radius:22px 22px 9px 9px}
+  .shop .add{margin-top:8px;padding:8px;font-size:9px}
+}
