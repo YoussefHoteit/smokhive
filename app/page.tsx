@@ -39,6 +39,10 @@ export default function Home() {
   useEffect(()=>{ try { setCartColors(JSON.parse(localStorage.getItem("smokhive-colors")||"{}")); } catch {} },[]);
   useEffect(()=>{ localStorage.setItem("smokhive-colors",JSON.stringify(cartColors)); },[cartColors]);
   useEffect(()=>{
+    document.body.classList.toggle("menu-open",menu);
+    return ()=>document.body.classList.remove("menu-open");
+  },[menu]);
+  useEffect(()=>{
     if(!selectedProduct) return;
     const close=(event:KeyboardEvent)=>{if(event.key==="Escape") setSelectedProduct(null)};
     document.addEventListener("keydown",close);
@@ -59,8 +63,8 @@ export default function Home() {
     <div className="ticker" aria-label="Store benefits"><div className="ticker-track"><div className="ticker-group"><span>FREE SHIPPING $50+</span><i>•</i><span>PRINTED TO ORDER</span><i>•</i><span>DURABLE PLA+</span><i>•</i></div><div className="ticker-group" aria-hidden="true"><span>FREE SHIPPING $50+</span><i>•</i><span>PRINTED TO ORDER</span><i>•</i><span>DURABLE PLA+</span><i>•</i></div></div></div>
     <header>
       <a className="logo" href="#top">SMOK<span>HIVE</span></a>
-      <nav className={menu?"open":""}><a href="#shop" onClick={()=>setMenu(false)}>Shop</a><a href="#story" onClick={()=>setMenu(false)}>Our process</a><a href="#reviews" onClick={()=>setMenu(false)}>Reviews</a><a href="#faq" onClick={()=>setMenu(false)}>FAQ</a></nav>
-      <div className="header-actions"><button className="icon-btn" aria-label="Search" onClick={()=>document.getElementById("search")?.focus()}>⌕</button><button className="cart-btn" onClick={()=>setDrawer(true)} aria-label={`Cart with ${count} items`}>BAG <b>{count}</b></button><button className="menu-btn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?"×":"☰"}</button></div>
+      <nav id="mobile-navigation" className={menu?"open":""}><a href="#shop" onClick={()=>setMenu(false)}>Shop</a><a href="#story" onClick={()=>setMenu(false)}>Our process</a><a href="#reviews" onClick={()=>setMenu(false)}>Reviews</a><a href="#faq" onClick={()=>setMenu(false)}>FAQ</a></nav>
+      <div className="header-actions"><button className="icon-btn" aria-label="Search" onClick={()=>document.getElementById("search")?.focus()}>⌕</button><button className="cart-btn" onClick={()=>setDrawer(true)} aria-label={`Cart with ${count} items`}>BAG <b>{count}</b></button><button className="menu-btn" onClick={()=>setMenu(!menu)} aria-label={menu?"Close menu":"Open menu"} aria-expanded={menu} aria-controls="mobile-navigation">{menu?"×":"☰"}</button></div>
     </header>
 
     <section className="hero" id="top">
