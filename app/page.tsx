@@ -56,7 +56,8 @@ export default function Home() {
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
   return <main>
-    <div className="announcement-bar" aria-label="Store benefits"><span>FREE SHIPPING $50+</span><span>PRINTED TO ORDER</span><span>DURABLE PLA+</span></div>\n    <header>
+    <div className="announcement-bar" aria-label="Store benefits"><span>FREE SHIPPING $50+</span><span>PRINTED TO ORDER</span><span>DURABLE PLA+</span></div>
+    <header>
       <a className="logo" href="#top">SMOK<span>HIVE</span></a>
       <nav className={menu?"open":""}><a href="#shop" onClick={()=>setMenu(false)}>Shop</a><a href="#story" onClick={()=>setMenu(false)}>Our process</a><a href="#reviews" onClick={()=>setMenu(false)}>Reviews</a><a href="#faq" onClick={()=>setMenu(false)}>FAQ</a></nav>
       <div className="header-actions"><button className="icon-btn" aria-label="Search" onClick={()=>document.getElementById("search")?.focus()}>⌕</button><button className="cart-btn" onClick={()=>setDrawer(true)} aria-label={`Cart with ${count} items`}>BAG <b>{count}</b></button><button className="menu-btn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?"×":"☰"}</button></div>
