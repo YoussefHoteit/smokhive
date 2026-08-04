@@ -84,7 +84,7 @@ export default function Home() {
   const viewProduct=(product:Product)=>{setSelectedProduct(product);setSelectedColor(colorOptions.find(c=>c.className===product.color)||colorOptions[0]);setDetailQty(1)};
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
-  return <main>
+  return <main id="top">
     <div className="announcement-bar" aria-label="Store benefits"><span>FREE SHIPPING $50+</span><span>PRINTED TO ORDER</span><span>DURABLE PLA+</span></div>
     <header>
       <a className="logo" href="#top">SMOK<span>HIVE</span></a>
