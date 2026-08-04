@@ -56,7 +56,7 @@ export default function Home() {
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
   return <main>
-    <div className="ticker">FREE SHIPPING $50+ <span>•</span> PRINTED TO ORDER <span>•</span> 30-DAY RETURNS</div>
+    <div className="ticker" aria-label="Store benefits"><div className="ticker-track"><div className="ticker-group"><span>FREE SHIPPING $50+</span><i>•</i><span>PRINTED TO ORDER</span><i>•</i><span>DURABLE PLA+</span><i>•</i></div><div className="ticker-group" aria-hidden="true"><span>FREE SHIPPING $50+</span><i>•</i><span>PRINTED TO ORDER</span><i>•</i><span>DURABLE PLA+</span><i>•</i></div></div></div>
     <header>
       <a className="logo" href="#top">SMOK<span>HIVE</span></a>
       <nav className={menu?"open":""}><a href="#shop" onClick={()=>setMenu(false)}>Shop</a><a href="#story" onClick={()=>setMenu(false)}>Our process</a><a href="#reviews" onClick={()=>setMenu(false)}>Reviews</a><a href="#faq" onClick={()=>setMenu(false)}>FAQ</a></nav>
