@@ -15,10 +15,39 @@ const colorOptions = [
 const products: Product[] = [
   {id:1,name:"Loop Tray",category:"Desk",price:24,color:"pink",desc:"A sculptural catch-all for keys, clips and everyday bits."},
   {id:2,name:"Cable Grid",category:"Desk",price:18,color:"lime",desc:"Snap-in cable control that keeps every cord in reach."},
-  {id:3,name:"Stack Vault",category:"Storage",price:32,color:"black",desc:"Lidded, stackable storage with a satisfyingly clean fit."},
-  {id:4,name:"Tool Tower",category:"Desk",price:28,color:"cream",desc:"A ribbed vertical caddy for pens, tools and brushes."},
-  {id:5,name:"Pocket Dock",category:"Accessories",price:16,color:"lime",desc:"A compact landing zone for small daily essentials."},
-  {id:6,name:"Gallery Desk Kit",category:"Kits",price:74,color:"pink",desc:"Six coordinated pieces. The full desk reset in one box."},
+  {id:3,name:"Tool Tower",category:"Desk",price:28,color:"cream",desc:"A ribbed vertical caddy for pens, tools and brushes."},
+  {id:4,name:"Monitor Shelf",category:"Desk",price:36,color:"black",desc:"A compact riser that creates useful storage beneath your screen."},
+  {id:5,name:"Pen Rail",category:"Desk",price:16,color:"lime",desc:"A low-profile organizer that keeps writing tools lined up."},
+  {id:6,name:"Note Dock",category:"Desk",price:19,color:"cream",desc:"An angled holder for notes, cards and daily reminders."},
+  {id:7,name:"Headphone Stand",category:"Desk",price:34,color:"pink",desc:"A stable display stand with a small tray built into the base."},
+  {id:8,name:"Keyboard Riser",category:"Desk",price:32,color:"black",desc:"A clean platform that opens up extra desk space underneath."},
+
+  {id:9,name:"Stack Vault",category:"Storage",price:32,color:"black",desc:"Lidded, stackable storage with a satisfyingly clean fit."},
+  {id:10,name:"Mini Drawer",category:"Storage",price:29,color:"pink",desc:"A compact pull-out drawer for small supplies and spare parts."},
+  {id:11,name:"Modular Bin",category:"Storage",price:22,color:"lime",desc:"An open bin designed to combine neatly with matching modules."},
+  {id:12,name:"Label Box",category:"Storage",price:26,color:"cream",desc:"A stackable box with a front slot for quick identification."},
+  {id:13,name:"Parts Caddy",category:"Storage",price:30,color:"black",desc:"Divided storage that keeps tiny components separated and visible."},
+  {id:14,name:"Stack Cube",category:"Storage",price:24,color:"pink",desc:"A versatile cube that stacks vertically without sliding."},
+  {id:15,name:"Archive Case",category:"Storage",price:38,color:"cream",desc:"A larger lidded case for cables, tools and project supplies."},
+  {id:16,name:"Clip Canister",category:"Storage",price:18,color:"lime",desc:"A twist-top container for clips, pins and other small pieces."},
+
+  {id:17,name:"Pocket Dock",category:"Accessories",price:16,color:"lime",desc:"A compact landing zone for small daily essentials."},
+  {id:18,name:"Phone Cradle",category:"Accessories",price:21,color:"black",desc:"An angled stand that keeps a phone visible while charging."},
+  {id:19,name:"Cable Clips Set",category:"Accessories",price:14,color:"pink",desc:"Six snap-in clips for routing loose cables along a surface."},
+  {id:20,name:"Key Catch",category:"Accessories",price:18,color:"cream",desc:"A small entryway tray sized for keys and pocket essentials."},
+  {id:21,name:"Card Stand",category:"Accessories",price:15,color:"lime",desc:"A minimal display stand for cards, photos and small prints."},
+  {id:22,name:"Controller Dock",category:"Accessories",price:27,color:"black",desc:"A balanced rest that keeps a game controller off the desk."},
+  {id:23,name:"Watch Rest",category:"Accessories",price:20,color:"pink",desc:"A curved bedside stand for a watch or lightweight bracelet."},
+  {id:24,name:"Coaster Pair",category:"Accessories",price:17,color:"cream",desc:"Two textured coasters with a matching storage sleeve."},
+
+  {id:25,name:"Gallery Desk Kit",category:"Kits",price:74,color:"pink",desc:"Six coordinated pieces for a complete desk reset."},
+  {id:26,name:"Cable Reset Kit",category:"Kits",price:42,color:"lime",desc:"A coordinated set of cable clips, docks and routing pieces."},
+  {id:27,name:"Creative Station Kit",category:"Kits",price:68,color:"cream",desc:"Tool storage, trays and small bins for a creative workspace."},
+  {id:28,name:"Student Desk Kit",category:"Kits",price:58,color:"black",desc:"Compact organizers selected for notes, pens, cables and devices."},
+  {id:29,name:"Entryway Kit",category:"Kits",price:49,color:"pink",desc:"A key tray, phone cradle and small container for the entryway."},
+  {id:30,name:"Maker Bench Kit",category:"Kits",price:82,color:"lime",desc:"Divided bins and tool storage for parts-heavy projects."},
+  {id:31,name:"Compact Workspace Kit",category:"Kits",price:64,color:"cream",desc:"Space-saving essentials for smaller desks and shared rooms."},
+  {id:32,name:"Full Studio Kit",category:"Kits",price:98,color:"black",desc:"A larger matching collection for organizing an entire studio surface."},
 ];
 
 const money = (n:number) => `$${n.toFixed(2)}`;
@@ -27,7 +56,7 @@ export default function Home() {
   const [cart,setCart] = useState<Cart>({});
   const [drawer,setDrawer] = useState(false);
   const [menu,setMenu] = useState(false);
-  const [category,setCategory] = useState("All");
+  const [category,setCategory] = useState("Desk");
   const [query,setQuery] = useState("");
   const [notice,setNotice] = useState("");
   const [selectedProduct,setSelectedProduct] = useState<Product|null>(null);
@@ -50,7 +79,7 @@ export default function Home() {
   const freeShippingTarget = 50;
   const freeShippingRemaining = Math.max(0,freeShippingTarget-subtotal);
   const freeShippingProgress = Math.min(100,(subtotal/freeShippingTarget)*100);
-  const filtered = useMemo(()=>products.filter(p=>(category==="All"||p.category===category)&&p.name.toLowerCase().includes(query.toLowerCase())),[category,query]);
+  const filtered = useMemo(()=>products.filter(p=>p.category===category&&p.name.toLowerCase().includes(query.toLowerCase())),[category,query]);
   const add=(id:number)=>{setCart(c=>({...c,[id]:(c[id]||0)+1}));setNotice("Added to cart");setTimeout(()=>setNotice(""),1400)};
   const viewProduct=(product:Product)=>{setSelectedProduct(product);setSelectedColor(colorOptions.find(c=>c.className===product.color)||colorOptions[0]);setDetailQty(1)};
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
@@ -65,13 +94,13 @@ export default function Home() {
 
     <section className="hero" id="top">
       <div className="spray spray-one">✦</div><div className="spray spray-two">////</div>
-      <div className="hero-copy"><p className="eyebrow">MAKE SPACE. KEEP STYLE.</p><h1>ORGANIZE<br/><i>OUT</i> LOUD.</h1><p className="dek">3D-printed organizers made for desks that refuse to blend in. Designed in small batches. Built for daily use.</p><div className="hero-actions"><a className="primary" href="#shop">SHOP THE DROP →</a><button className="text-btn" onClick={()=>add(6)}>ADD THE FULL KIT</button></div><div className="rating">★★★★★ <span>4.9 · 2,400+ organized spaces</span></div></div>
+      <div className="hero-copy"><p className="eyebrow">MAKE SPACE. KEEP STYLE.</p><h1>ORGANIZE<br/><i>OUT</i> LOUD.</h1><p className="dek">3D-printed organizers made for desks that refuse to blend in. Designed in small batches. Built for daily use.</p><div className="hero-actions"><a className="primary" href="#shop">SHOP THE DROP →</a><button className="text-btn" onClick={()=>add(25)}>ADD THE FULL KIT</button></div><div className="rating">★★★★★ <span>4.9 · 2,400+ organized spaces</span></div></div>
       <div className="hero-art"><img src="/smokhive-hero.jpg" alt="Colorful 3D-printed desk organizers on concrete plinths"/><div className="price-tag"><span>GALLERY DESK KIT<br/><small>6 PIECES</small></span><b>$74</b></div></div>
     </section>
     <section className="product-ticker" aria-label="Products we sell"><div className="product-ticker-track"><div className="product-ticker-group"><a href="#shop"><small>DESK</small> LOOP TRAY <b>$24</b></a><i>✦</i><a href="#shop"><small>DESK</small> CABLE GRID <b>$18</b></a><i>✦</i><a href="#shop"><small>STORAGE</small> STACK VAULT <b>$32</b></a><i>✦</i><a href="#shop"><small>DESK</small> TOOL TOWER <b>$28</b></a><i>✦</i><a href="#shop"><small>ACCESSORIES</small> POCKET DOCK <b>$16</b></a><i>✦</i><a href="#shop"><small>KITS</small> GALLERY DESK KIT <b>$74</b></a><i>✦</i></div><div className="product-ticker-group" aria-hidden="true"><a href="#shop" tabIndex={-1}><small>DESK</small> LOOP TRAY <b>$24</b></a><i>✦</i><a href="#shop" tabIndex={-1}><small>DESK</small> CABLE GRID <b>$18</b></a><i>✦</i><a href="#shop" tabIndex={-1}><small>STORAGE</small> STACK VAULT <b>$32</b></a><i>✦</i><a href="#shop" tabIndex={-1}><small>DESK</small> TOOL TOWER <b>$28</b></a><i>✦</i><a href="#shop" tabIndex={-1}><small>ACCESSORIES</small> POCKET DOCK <b>$16</b></a><i>✦</i><a href="#shop" tabIndex={-1}><small>KITS</small> GALLERY DESK KIT <b>$74</b></a><i>✦</i></div></div></section>
 
     <section className="shop" id="shop"><div className="section-head"><div><p className="kicker">THE DAILY EDIT.</p><h2>FUNCTION, WITH A LOUDER VOICE.</h2></div><p>Small-batch pieces that bring order without draining the personality from your space.</p></div>
-      <div className="tools"><div className="filters">{["Desk","Storage","Accessories","Kits"].map(c=><button key={c} className={category===c?"active":""} aria-pressed={category===c} onClick={()=>setCategory(category===c?"All":c)}>{c}</button>)}</div><input id="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="SEARCH PIECES" aria-label="Search products"/></div>
+      <div className="tools"><div className="filters">{["Desk","Storage","Accessories","Kits"].map(c=><button key={c} className={category===c?"active":""} aria-pressed={category===c} onClick={()=>setCategory(c)}>{c}</button>)}</div><input id="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="SEARCH PIECES" aria-label="Search products"/></div>
       <div className="grid">{filtered.map((p,i)=><article className="product" key={p.id} onClick={()=>viewProduct(p)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" ")viewProduct(p)}} tabIndex={0} role="button" aria-label={`View details for ${p.name}`}><div className={`product-art ${p.color}`}><span className="number">0{i+1}</span><div className="shape"><span></span><span></span><span></span></div><button className="quick" onClick={e=>{e.stopPropagation();add(p.id)}} aria-label={`Quick add ${p.name}`}>+</button><span className="view-hint">VIEW DETAILS ↗</span></div><div className="product-copy"><div><p>{p.category}</p><h3>{p.name}</h3></div><b>{money(p.price)}</b></div><p className="product-desc">{p.desc}</p><button className="add" onClick={e=>{e.stopPropagation();viewProduct(p)}}>VIEW ITEM <span>→</span></button></article>)}</div>
       {!filtered.length&&<p className="empty">No pieces found. Try another search.</p>}
     </section>
