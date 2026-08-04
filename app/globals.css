@@ -44,7 +44,7 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
   .shop .product-copy h3{font-size:20px;line-height:.95;margin:4px 0 6px;overflow-wrap:anywhere}
   .shop .product-copy>b{font-size:14px}
   .shop .product-desc,.shop .view-hint{display:none}
-  .shop .quick{right:7px;bottom:7px;width:42px;height:34px;font-size:0}
+  .shop .quick{right:7px;bottom:7px;width:38px;height:38px;font-size:0}.shop .quick::before{content:"";position:absolute;width:14px;height:2px;background:#111;transform:rotate(-45deg)}.shop .quick::after{content:"";width:8px;height:8px;border-top:2px solid #111;border-right:2px solid #111;transform:translate(3px,-3px)}
   .shop .shape{border-width:8px;border-radius:22px 22px 9px 9px}
   .shop .add{margin-top:8px;padding:8px;font-size:9px}
 }
