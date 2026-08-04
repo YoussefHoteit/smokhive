@@ -54,3 +54,10 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 @media(min-width:901px){header{height:82px;padding-inline:clamp(24px,3vw,52px)}nav{gap:clamp(24px,3vw,42px)}}
 @media(min-width:581px) and (max-width:900px){header{height:72px;padding-inline:24px}nav{top:72px}}
 @media(max-width:580px){header{height:62px;padding-inline:14px}.logo{font-size:29px}.header-actions{gap:5px}.cart-btn{min-height:40px}.menu-btn{min-width:40px;min-height:40px}}
+
+
+/* Static responsive announcement bar — intentionally no animation. */
+.announcement-bar{min-height:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;background:#050505;color:var(--lime);font:700 clamp(9px,.8vw,12px)/1.15 monospace;letter-spacing:1px;text-align:center}
+.announcement-bar span{display:grid;place-items:center;padding:7px 12px}
+.announcement-bar span+span{border-left:1px solid #555}
+@media(max-width:580px){.announcement-bar{min-height:40px;font-size:8px;letter-spacing:.45px}.announcement-bar span{padding:5px 4px;overflow-wrap:anywhere}}
