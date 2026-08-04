@@ -130,9 +130,6 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="footer-proof" aria-label="Product benefits">
-        <span>MADE TO ORDER</span><span>DURABLE PLA+</span><span>FREE SHIPPING $50+</span>
-      </div>
       <div className="footer-bottom">
         <small>© 2026 SMOKHIVE. ALL RIGHTS RESERVED.</small>
         <div><a href="#faq">PRIVACY</a><a href="#faq">TERMS</a><a href="#faq">ACCESSIBILITY</a></div>
