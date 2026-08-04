@@ -108,7 +108,37 @@ export default function Home() {
     <section className="story" id="story"><div className="story-poster"><span>NO.</span><strong>MASS<br/>BORING.</strong><i>JUST GOOD DESIGN.</i></div><div><p className="eyebrow pink-label">PRINTED WITH PURPOSE</p><h2>ONE LAYER<br/>AT A TIME.</h2><p>Every SmokHive piece is printed to order in durable plant-based PLA+. That means less waste, small-batch quality control, and a finish with real texture.</p><ul><li><b>01</b> Designed for real routines</li><li><b>02</b> Printed in small batches</li><li><b>03</b> Packed without plastic fluff</li></ul></div></section>
     <section className="reviews" id="reviews"><p className="kicker">HEARD ON THE STREET.</p><div className="review-grid"><blockquote>“The cable grid fixed the mess and looks like a tiny art object.”<cite>— Maya R. ★★★★★</cite></blockquote><blockquote>“Feels sturdy, fits perfectly, and the pink is even better in person.”<cite>— Jordan K. ★★★★★</cite></blockquote><blockquote>“Finally, desk storage that doesn’t look like office supply storage.”<cite>— Alex T. ★★★★★</cite></blockquote></div></section>
     <section className="faq" id="faq"><h2>THE FINE PRINT.</h2>{[["How long does printing take?","Most pieces are made and dispatched within 2–4 business days."],["What material do you use?","Durable PLA+, a plant-based plastic chosen for crisp detail and everyday strength."],["Can I return an item?","Yes. Unused items can be returned within 30 days of delivery."],["Will colors match exactly?","Small shade variations can happen between material batches—part of small-batch production."]].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</section>
-    <footer><div className="logo">SMOKHIVE</div><p>Objects for organized chaos.</p><div><a href="#shop">Shop</a><a href="#story">Process</a><a href="#faq">Help</a></div><small>© 2026 SmokHive. Demo storefront.</small></footer>
+    <footer className="site-footer">
+      <div className="footer-top">
+        <div className="footer-brand">
+          <div className="logo">SMOKHIVE</div>
+          <h2>MAKE SPACE.<br/>KEEP STYLE.</h2>
+          <p>Small-batch 3D-printed organizers built to bring order, color and personality to everyday spaces.</p>
+        </div>
+        <nav className="footer-links" aria-label="Footer navigation">
+          <div><h3>SHOP</h3><a href="#shop">Desk</a><a href="#shop">Storage</a><a href="#shop">Accessories</a><a href="#shop">Kits</a></div>
+          <div><h3>INFO</h3><a href="#story">Our process</a><a href="#reviews">Reviews</a><a href="#faq">Shipping &amp; FAQ</a><a href="#faq">Contact</a></div>
+        </nav>
+        <div className="footer-signup">
+          <span>DROP ALERTS</span>
+          <h3>GET THE NEXT EDIT FIRST.</h3>
+          <p>New colors, limited runs and studio updates—sent occasionally.</p>
+          <form onSubmit={e=>{e.preventDefault();e.currentTarget.reset();alert("You're on the list.")}}>
+            <label className="sr-only" htmlFor="footer-email">Email address</label>
+            <input id="footer-email" type="email" placeholder="EMAIL ADDRESS" required/>
+            <button type="submit" aria-label="Join the SmokHive mailing list">JOIN →</button>
+          </form>
+        </div>
+      </div>
+      <div className="footer-proof" aria-label="Product benefits">
+        <span>MADE TO ORDER</span><span>DURABLE PLA+</span><span>FREE SHIPPING $50+</span>
+      </div>
+      <div className="footer-bottom">
+        <small>© 2026 SMOKHIVE. ALL RIGHTS RESERVED.</small>
+        <div><a href="#faq">PRIVACY</a><a href="#faq">TERMS</a><a href="#faq">ACCESSIBILITY</a></div>
+        <a className="back-top" href="#top">BACK TO TOP ↑</a>
+      </div>
+    </footer>
 
     <div className={drawer?"overlay show":"overlay"} onClick={()=>setDrawer(false)}></div>
     <aside className={drawer?"cart open":"cart"} aria-hidden={!drawer}><div className="cart-head"><div><p>YOUR BAG</p><h2>{count} {count===1?"PIECE":"PIECES"}</h2></div><button onClick={()=>setDrawer(false)} aria-label="Close cart">×</button></div>
