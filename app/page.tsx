@@ -7,9 +7,9 @@ type Cart = Record<number, number>;
 
 const colorOptions = [
   {name:"Ink Black",value:"#171717",className:"black"},
-  {name:"Gallery Cream",value:"#e8dfcf",className:"cream"},
-  {name:"Electric Lime",value:"#b8ff28",className:"lime"},
-  {name:"Hot Magenta",value:"#ff2d8d",className:"pink"},
+  {name:"Frost Grey",value:"#d6dde7",className:"cream"},
+  {name:"Cobalt Blue",value:"#3b82f6",className:"lime"},
+  {name:"Steel Grey",value:"#94a3b8",className:"pink"},
 ];
 
 const products: Product[] = [
