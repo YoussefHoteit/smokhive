@@ -54,6 +54,7 @@ const money = (n:number) => `$${n.toFixed(2)}`;
 
 export default function Home() {
   const [cart,setCart] = useState<Cart>({});
+  const [ageConfirmed,setAgeConfirmed] = useState(false);
   const [drawer,setDrawer] = useState(false);
   const [menu,setMenu] = useState(false);
   const [category,setCategory] = useState("Desk");
@@ -63,6 +64,13 @@ export default function Home() {
   const [selectedColor,setSelectedColor] = useState(colorOptions[0]);
   const [detailQty,setDetailQty] = useState(1);
   const [cartColors,setCartColors] = useState<Record<number,string>>({});
+  useEffect(()=>{
+    setAgeConfirmed(localStorage.getItem("smokhive-age-confirmed")==="yes");
+  },[]);
+  useEffect(()=>{
+    document.body.style.overflow=ageConfirmed?"":"hidden";
+    return ()=>{document.body.style.overflow=""};
+  },[ageConfirmed]);
   useEffect(()=>{ try { setCart(JSON.parse(localStorage.getItem("smokhive-cart")||"{}")); } catch {} },[]);
   useEffect(()=>{ localStorage.setItem("smokhive-cart",JSON.stringify(cart)); },[cart]);
   useEffect(()=>{ try { setCartColors(JSON.parse(localStorage.getItem("smokhive-colors")||"{}")); } catch {} },[]);
@@ -85,6 +93,19 @@ export default function Home() {
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
   return <main id="top">
+    {!ageConfirmed && <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+      <div className="age-gate-card">
+        <span className="age-mark" aria-hidden="true">18+</span>
+        <p className="age-kicker">AGE CHECK</p>
+        <h1 id="age-title">ARE YOU 18 OR OLDER?</h1>
+        <p>You must be 18 or older to enter SmokHive.</p>
+        <div className="age-actions">
+          <button className="age-enter" onClick={()=>{localStorage.setItem("smokhive-age-confirmed","yes");setAgeConfirmed(true)}}>YES, I&apos;M 18+</button>
+          <a className="age-leave" href="https://www.google.com">NO, LEAVE SITE</a>
+        </div>
+        <small>By entering, you confirm that you meet the minimum legal age required in your location.</small>
+      </div>
+    </div>}
     <div className="announcement-bar" aria-label="Store benefits"><span>FREE SHIPPING $50+</span><span>PRINTED TO ORDER</span><span>DURABLE PLA+</span></div>
     <header>
       <a className="logo" href="#top">SMOK<span>HIVE</span></a>
