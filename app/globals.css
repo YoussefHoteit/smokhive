@@ -250,3 +250,4 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 .product-finish b{font:24px Anton;color:#a51f16;text-align:right}
 @media(max-width:760px){.cart-thumb{width:68px;height:68px}.detail-thumbs{bottom:48px}.detail-thumbs button{width:54px;height:42px}.product-finish{margin:14px 0;padding:10px 0}.product-finish b{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.product-photo,.detail-thumbs button{transition:none!important}}
+@media(min-width:1101px){.shop .grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
