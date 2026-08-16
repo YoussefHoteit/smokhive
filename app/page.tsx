@@ -195,7 +195,7 @@ export default function Home() {
     {selectedProduct&&<div className="detail-backdrop" role="presentation" onMouseDown={e=>{if(e.target===e.currentTarget)setSelectedProduct(null)}}>
       <section className="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
         <button className="detail-close" onClick={()=>setSelectedProduct(null)} aria-label="Close product details">×</button>
-        <div className={`detail-art ${selectedProduct.images?"has-photo":selectedColor.className}${selectedProduct.imageFit==="cover"?" photo-cover":""}${selectedProduct.imageBackground==="light"?" photo-light":""}`}>
+        <div className={`detail-art ${selectedProduct.images?"has-photo":selectedColor.className}${selectedProduct.imageBackground==="light"?" photo-light":""}`}>
           <span className="detail-sticker">MADE TO ORDER</span>
           {selectedProduct.images?<>
             <img className="detail-photo" src={selectedProduct.images[selectedImage]} alt={`${selectedProduct.imageAlt||selectedProduct.name}, view ${selectedImage+1} of ${selectedProduct.images.length}`}/>
