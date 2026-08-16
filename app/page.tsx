@@ -25,7 +25,7 @@ const colorOptions = [
 ];
 
 const products: Product[] = [
-  {id:34,name:"Survival Kit",category:"Lighter Sleeves",price:24,color:"lime",finish:"Signal Red",images:["/products/survival-kit-1.webp","/products/survival-kit-2.webp","/products/survival-kit-3.webp","/products/survival-kit-4.webp","/products/survival-kit-5.webp"],imageAlt:"Signal-red 3D-printed Survival Kit carry case with fitted lid",imageFit:"cover",imageBackground:"light",desc:"A compact, lidded carry case built to keep small essentials protected and close at hand. Case only; accessories shown are not included."},
+  {id:34,name:"Survival Kit",category:"Lighter Sleeves",price:24,color:"lime",finish:"Signal Red",images:["/products/survival-kit-1.webp","/products/survival-kit-2.webp","/products/survival-kit-3.webp","/products/survival-kit-4.webp"],imageAlt:"Signal-red 3D-printed Survival Kit carry case with fitted lid",imageFit:"cover",imageBackground:"light",desc:"A compact, lidded carry case built to keep small essentials protected and close at hand. Case only; accessories shown are not included."},
   {id:33,name:"Inferno Voronoi Sleeve",category:"Lighter Sleeves",price:24,color:"black",finish:"Inferno Red / Copper",images:["/products/inferno-voronoi-sleeve-1.webp","/products/inferno-voronoi-sleeve-2.webp","/products/inferno-voronoi-sleeve-3.webp"],imageAlt:"Inferno Voronoi lighter sleeve in red and copper",desc:"A molten-look Voronoi lattice sleeve that turns a standard lighter into a sculptural statement piece."},
 
   {id:1,name:"Loop Tray",category:"Trays",price:24,color:"pink",desc:"A sculptural catch-all for keys, clips and everyday bits."},
@@ -201,7 +201,7 @@ export default function Home() {
             <img className="detail-photo" src={selectedProduct.images[selectedImage]} alt={`${selectedProduct.imageAlt||selectedProduct.name}, view ${selectedImage+1} of ${selectedProduct.images.length}`}/>
             <div className="detail-thumbs" aria-label="Product image gallery">{selectedProduct.images.map((image,index)=><button key={image} className={selectedImage===index?"active":""} onClick={()=>setSelectedImage(index)} aria-label={`Show product image ${index+1}`} aria-pressed={selectedImage===index}><img src={image} alt=""/></button>)}</div>
           </>:<div className="detail-shape"><span></span><span></span><span></span></div>}
-          <small>{selectedProduct.images?"3 PRODUCT VIEWS":"VISIBLE LAYER TEXTURE · PLA+"}</small>
+          <small>{selectedProduct.images?`${selectedProduct.images.length} PRODUCT VIEWS`:"VISIBLE LAYER TEXTURE · PLA+"}</small>
         </div>
         <div className="detail-info">
           <p className="detail-category">{selectedProduct.category} / SMALL BATCH</p>
