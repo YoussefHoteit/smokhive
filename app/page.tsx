@@ -25,7 +25,7 @@ const colorOptions = [
 ];
 
 const products: Product[] = [
-  {id:39,name:"Dual Compartment Lighter Sleeve",category:"Lighter Sleeves",price:5,color:"lime",finish:"Emerald Green",images:["/products/dual-compartment-lighter-sleeve-1.webp","/products/dual-compartment-lighter-sleeve-2.webp","/products/dual-compartment-lighter-sleeve-3.webp","/products/dual-compartment-lighter-sleeve-4.webp"],imageAlt:"Emerald-green dual-compartment lighter sleeve with a black lighter and screw-top storage compartment",imageFit:"cover",imageBackground:"light",desc:"A compact 3D-printed carry sleeve with a fitted lighter channel and a separate screw-top storage compartment. Case only; lighter and accessories shown are not included."},
+  {id:39,name:"Dual Compartment Lighter Sleeve",category:"Lighter Sleeves",price:5,color:"lime",finish:"Emerald Green",images:["/products/dual-compartment-lighter-sleeve-1.webp","/products/dual-compartment-lighter-sleeve-2.webp","/products/dual-compartment-lighter-sleeve-3.webp"],imageAlt:"Emerald-green dual-compartment lighter sleeve with a black lighter and screw-top storage compartment",imageFit:"cover",imageBackground:"light",desc:"A compact 3D-printed carry sleeve with a fitted lighter channel and a separate screw-top storage compartment. Case only; lighter and accessories shown are not included."},
   {id:38,name:"Coca-Cola Lighter Sleeve",category:"Lighter Sleeves",price:5,color:"lime",finish:"Classic Red",images:["/products/coca-cola-lighter-sleeve-1.webp","/products/coca-cola-lighter-sleeve-2.webp","/products/coca-cola-lighter-sleeve-3.webp","/products/coca-cola-lighter-sleeve-4.webp"],imageAlt:"Classic-red 3D-printed lighter sleeve with raised white Coca-Cola script",imageFit:"cover",imageBackground:"light",desc:"A bright-red 3D-printed lighter sleeve finished with raised white Coca-Cola script and a snug rounded profile. Sleeve only; lighter shown is not included."},
   {id:37,name:"Chrome Hearts Sleeve",category:"Lighter Sleeves",price:5,color:"cream",finish:"Metallic Silver",images:["/products/chrome-hearts-sleeve-1.webp","/products/chrome-hearts-sleeve-2.webp","/products/chrome-hearts-sleeve-3.webp"],imageAlt:"Metallic-silver cylindrical Clipper lighter sleeve with raised gothic cross relief",imageFit:"cover",imageBackground:"light",desc:"A cylindrical metallic-silver sleeve covered in raised gothic cross and floral relief, sized for a Clipper-style lighter. Sleeve only; lighter shown is not included."},
   {id:36,name:"Bunny Icon Sleeve",category:"Lighter Sleeves",price:5,color:"pink",finish:"Iridescent Pastel",images:["/products/bunny-icon-sleeve-1.webp","/products/bunny-icon-sleeve-2.webp","/products/bunny-icon-sleeve-3.webp","/products/bunny-icon-sleeve-4.webp","/products/bunny-icon-sleeve-5.webp"],imageAlt:"Iridescent pastel 3D-printed lighter sleeve with a raised black bunny-and-bow icon",imageFit:"cover",imageBackground:"light",desc:"A rigid 3D-printed lighter sleeve with an iridescent pastel face, ribbed black sides, and a raised bunny-and-bow icon. Sleeve only; lighter shown is not included."},
@@ -74,7 +74,7 @@ const money = (n:number) => `$${n.toFixed(2)}`;
 
 export default function Home() {
   const [cart,setCart] = useState<Cart>({});
-  const [ageConfirmed,setAgeConfirmed] = useState(false);
+  const [ageConfirmed,setAgeConfirmed] = useState<boolean|null>(null);
   const [drawer,setDrawer] = useState(false);
   const [menu,setMenu] = useState(false);
   const [category,setCategory] = useState("Lighter Sleeves");
@@ -86,10 +86,14 @@ export default function Home() {
   const [detailQty,setDetailQty] = useState(1);
   const [cartColors,setCartColors] = useState<Record<number,string>>({});
   useEffect(()=>{
-    setAgeConfirmed(localStorage.getItem("smokhive-age-confirmed")==="yes");
+    try {
+      setAgeConfirmed(localStorage.getItem("smokhive-age-confirmed")==="yes");
+    } catch {
+      setAgeConfirmed(false);
+    }
   },[]);
   useEffect(()=>{
-    document.body.style.overflow=ageConfirmed?"":"hidden";
+    document.body.style.overflow=ageConfirmed===true?"":"hidden";
     return ()=>{document.body.style.overflow=""};
   },[ageConfirmed]);
   useEffect(()=>{ try { setCart(JSON.parse(localStorage.getItem("smokhive-cart")||"{}")); } catch {} },[]);
@@ -113,15 +117,19 @@ export default function Home() {
   const viewProduct=(product:Product)=>{setSelectedProduct(product);setSelectedImage(0);setSelectedColor(colorOptions.find(c=>c.className===product.color)||colorOptions[0]);setDetailQty(1)};
   const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedProduct.finish||selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
+  const confirmAge=()=>{
+    setAgeConfirmed(true);
+    try { localStorage.setItem("smokhive-age-confirmed","yes"); } catch {}
+  };
   return <main id="top">
-    {!ageConfirmed && <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+    {ageConfirmed!==true && <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-description">
       <div className="age-gate-card">
         <span className="age-mark" aria-hidden="true">18+</span>
         <p className="age-kicker">AGE CHECK</p>
         <h1 id="age-title">ARE YOU 18 OR OLDER?</h1>
-        <p>You must be 18 or older to enter SmokHive.</p>
+        <p id="age-description">You must be 18 or older to enter SmokHive.</p>
         <div className="age-actions">
-          <button className="age-enter" onClick={()=>{localStorage.setItem("smokhive-age-confirmed","yes");setAgeConfirmed(true)}}>YES, I&apos;M 18+</button>
+          <button type="button" className="age-enter" onClick={confirmAge}>YES, I&apos;M 18+</button>
           <a className="age-leave" href="https://www.google.com">NO, LEAVE SITE</a>
         </div>
         <small>By entering, you confirm that you meet the minimum legal age required in your location.</small>

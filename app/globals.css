@@ -227,8 +227,10 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 .age-gate-card>p:not(.age-kicker){max-width:460px;margin:0;font-size:16px;line-height:1.55}
 .age-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 20px}
 .age-actions button,.age-actions a{min-height:54px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;padding:12px 16px;font-weight:900;text-align:center;text-decoration:none;cursor:pointer}
-.age-enter{background:var(--lime);box-shadow:5px 5px 0 var(--ink)}
+.age-enter{position:relative;z-index:1;appearance:none;background:var(--lime);box-shadow:5px 5px 0 var(--ink);touch-action:manipulation;user-select:none}
 .age-enter:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.age-enter:focus-visible{outline:4px solid #fff;outline-offset:4px}
+.age-enter:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
 .age-leave{background:var(--paper)}
 .age-leave:hover{background:var(--pink)}
 .age-gate small{display:block;max-width:490px;color:#667085;font:10px/1.5 monospace}
