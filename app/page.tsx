@@ -25,6 +25,7 @@ const colorOptions = [
 ];
 
 const products: Product[] = [
+  {id:35,name:"Bumpy Grip Sleeve",category:"Lighter Sleeves",price:20,color:"cream",finish:"Cyan Blue",images:["/products/bumpy-grip-sleeve-1.webp","/products/bumpy-grip-sleeve-2.webp","/products/bumpy-grip-sleeve-3.webp"],imageAlt:"Cyan-blue 3D-printed Bumpy Grip lighter sleeve with three rounded grip sections",imageFit:"cover",imageBackground:"light",desc:"A sculpted three-lobe sleeve that adds a comfortable, tactile grip to a standard lighter. Sleeve only; lighter shown is not included."},
   {id:34,name:"Survival Kit",category:"Lighter Sleeves",price:24,color:"lime",finish:"Signal Red",images:["/products/survival-kit-1.webp","/products/survival-kit-2.webp","/products/survival-kit-3.webp","/products/survival-kit-4.webp"],imageAlt:"Signal-red 3D-printed Survival Kit carry case with fitted lid",imageFit:"cover",imageBackground:"light",desc:"A compact, lidded carry case built to keep small essentials protected and close at hand. Case only; accessories shown are not included."},
   {id:33,name:"Inferno Voronoi Sleeve",category:"Lighter Sleeves",price:24,color:"black",finish:"Inferno Red / Copper",images:["/products/inferno-voronoi-sleeve-1.webp","/products/inferno-voronoi-sleeve-2.webp","/products/inferno-voronoi-sleeve-3.webp"],imageAlt:"Inferno Voronoi lighter sleeve in red and copper",desc:"A molten-look Voronoi lattice sleeve that turns a standard lighter into a sculptural statement piece."},
 
