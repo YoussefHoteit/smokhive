@@ -263,3 +263,21 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 @media(max-width:760px){.cart-thumb{width:68px;height:68px}.detail-thumbs{bottom:48px}.detail-thumbs button{width:54px;height:42px}.product-finish{margin:14px 0;padding:10px 0}.product-finish b{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.product-photo,.detail-thumbs button{transition:none!important}}
 @media(min-width:1101px){.shop .grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+/* Minimal, editorial product gallery */
+.shop .tools{align-items:flex-end}
+.shop .filters{gap:22px}
+.shop .filters button{border:0;border-bottom:2px solid transparent;padding:7px 0;background:transparent;box-shadow:none}
+.shop .filters button.active{border-bottom-color:var(--pink);background:transparent;color:var(--ink);box-shadow:none}
+.shop .tools input{border:0;border-bottom:2px solid var(--ink);padding:9px 0;background:transparent}
+.shop .grid{gap:clamp(20px,2vw,34px)}
+.shop .product{border:0;background:transparent;padding:0;box-shadow:none;transition:opacity .18s ease}
+.shop .product:hover{transform:none;box-shadow:none}
+.shop .product:focus-visible{outline:3px solid var(--lime);outline-offset:6px}
+.shop .product-art{height:auto;aspect-ratio:4/5;border:0}
+.shop .product-copy{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:13px 0 0}
+.shop .product-copy p{font-size:10px;letter-spacing:.7px}
+.shop .product-copy h3{margin:5px 0 0;font-size:clamp(24px,2vw,32px);line-height:.95}
+.shop .product-copy>b{font-size:16px;white-space:nowrap}
+.shop .product:hover .product-copy h3,.shop .product:focus-visible .product-copy h3{text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:4px;text-underline-offset:4px}
+@media(max-width:720px){.shop .grid{gap:18px}.shop .product{padding:0}.shop .product-copy{display:flex;align-items:flex-end;padding-top:10px}.shop .product-copy h3{font-size:22px}.shop .product-copy>b{font-size:13px}.shop .filters{gap:18px}.shop .filters button{padding:7px 0}}
