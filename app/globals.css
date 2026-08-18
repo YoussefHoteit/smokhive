@@ -283,3 +283,4 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 .shop .product-copy>b{font-size:16px;white-space:nowrap}
 .shop .product:hover .product-copy h3,.shop .product:focus-visible .product-copy h3{text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:4px;text-underline-offset:4px}
 @media(max-width:720px){.shop .grid{gap:18px}.shop .product{padding:0}.shop .product-copy{display:flex;align-items:flex-end;padding-top:10px}.shop .product-copy h3{font-size:22px}.shop .product-copy>b{font-size:13px}.shop .filters{gap:18px}.shop .filters button{padding:7px 0}}
+.hero-art .price-tag{display:none}
