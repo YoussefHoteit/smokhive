@@ -6,7 +6,7 @@ type Product = {
   id:number;
   name:string;
   category:string;
-  price:number;
+  price:number|null;
   color:string;
   desc:string;
   images?:string[];
@@ -33,6 +33,73 @@ const products: Product[] = [
   {id:35,name:"Bumpy Grip Sleeve",category:"Lighter Sleeves",price:20,color:"cream",finish:"Cyan Blue",images:["/products/bumpy-grip-sleeve-1.webp","/products/bumpy-grip-sleeve-2.webp","/products/bumpy-grip-sleeve-3.webp"],imageAlt:"Cyan-blue 3D-printed Bumpy Grip lighter sleeve with three rounded grip sections",imageFit:"cover",imageBackground:"light",desc:"A sculpted three-lobe sleeve that adds a comfortable, tactile grip to a standard lighter. Sleeve only; lighter shown is not included."},
   {id:34,name:"Survival Kit",category:"Lighter Sleeves",price:24,color:"lime",finish:"Signal Red",images:["/products/survival-kit-1.webp","/products/survival-kit-2.webp","/products/survival-kit-3.webp","/products/survival-kit-4.webp"],imageAlt:"Signal-red 3D-printed Survival Kit carry case with fitted lid",imageFit:"cover",imageBackground:"light",desc:"A compact, lidded carry case built to keep small essentials protected and close at hand. Case only; accessories shown are not included."},
   {id:33,name:"Inferno Voronoi Sleeve",category:"Lighter Sleeves",price:24,color:"black",finish:"Inferno Red / Copper",images:["/products/inferno-voronoi-sleeve-1.webp","/products/inferno-voronoi-sleeve-2.webp","/products/inferno-voronoi-sleeve-3.webp"],imageAlt:"Inferno Voronoi lighter sleeve in red and copper",desc:"A molten-look Voronoi lattice sleeve that turns a standard lighter into a sculptural statement piece."},
+
+  {id:41,name:"All-in-One Rolling Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:42,name:"All-in-One Smoke Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:43,name:"Biohazard Barrel Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:44,name:"BlazeGuard Pocket Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:45,name:"Bullets Roll Case",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:46,name:"Cone Loader Tool",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:47,name:"Cyberpunk Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:48,name:"DiamondGrip Storage Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:49,name:"Dragon Head Tray",category:"Trays",price:null,color:"lime",desc:"Product details will be available soon."},
+  {id:50,name:"Dragon Scale Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:51,name:"Emergency Lighter Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:52,name:"Flashbang Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:53,name:"Foldable Roll Case",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:54,name:"Frag Pattern Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:55,name:"Gothic Skull Stash Bowl",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:56,name:"Grenade Stash Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:57,name:"Grenade Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:58,name:"Groovy Wave Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:59,name:"Helix EDC Vault",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:60,name:"Hiking Waterproof Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:61,name:"Luxury Icon Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:62,name:"MagFlip Case",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:63,name:"MagFlip Round Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:64,name:"MeshGrip Sleeve",category:"Lighter Sleeves",price:null,color:"pink",finish:"Blue Red Purple",desc:"Product details will be available soon."},
+  {id:65,name:"Mickey Mouse Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:66,name:"Mini Outdoor Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:67,name:"Mini Stasher Capsule - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:68,name:"Mini Wheelie Bin",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:69,name:"Moai Stone Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:70,name:"Motorcycle Bowl",category:"Trays",price:null,color:"lime",desc:"Product details will be available soon."},
+  {id:71,name:"Off-Road Tire Tray",category:"Trays",price:null,color:"lime",desc:"Product details will be available soon."},
+  {id:72,name:"Pocket Smoke Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:73,name:"Pocket Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:74,name:"Quad Slot Storage Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:75,name:"Rolling Cross & Packer",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:76,name:"Rolling Essentials EDC Case",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:77,name:"Rolling Essentials Organizer",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:78,name:"Rugged Knurled Storage Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:79,name:"Rugged Outdoor Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:80,name:"Rugged Threaded Container Set",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:81,name:"Sealed EDC Stash Container",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:82,name:"Single Smoke Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:83,name:"Six Cone Packing Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
+  {id:84,name:"Skull Graveyard Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:85,name:"Skull Mohawk Stand",category:"Figurines",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:86,name:"Skull Rider Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:87,name:"SlideLock Stash Box",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:88,name:"Slim Roll Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:89,name:"Smiley Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:90,name:"Snap Pocket Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:91,name:"SnapLock Mini Stash Box",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:92,name:"SnapLock Smoking Essentials Box",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:93,name:"Snoop’s Ring Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:94,name:"Soap Bar Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:95,name:"Stash Container Collection",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:96,name:"StashR Pocket Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:97,name:"Stealth Mini Stash",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:98,name:"Supreme-Style Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:99,name:"Swirly Cone Stash Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:100,name:"Tactical Mag Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:101,name:"ThreadLock Pocket Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:102,name:"ThreadLock Stash Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:103,name:"ThreadLock Stash Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:104,name:"Toxic Biohazard Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:105,name:"TwistPod Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:106,name:"WaveGrip Keychain Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
 
   {id:1,name:"Loop Tray",category:"Trays",price:24,color:"pink",desc:"A sculptural catch-all for keys, clips and everyday bits."},
   {id:2,name:"Cable Grid",category:"Trays",price:18,color:"lime",desc:"Snap-in cable control that keeps every cord in reach."},
@@ -71,7 +138,7 @@ const products: Product[] = [
   {id:32,name:"Full Studio Kit",category:"Rolling Kits",price:98,color:"black",desc:"A larger matching collection for organizing an entire studio surface."},
 ];
 
-const money = (n:number) => `$${n.toFixed(2)}`;
+const money = (n:number|null) => n===null?"COMING SOON":`$${n.toFixed(2)}`;
 
 export default function Home() {
   const [cart,setCart] = useState<Cart>({});
@@ -109,14 +176,14 @@ export default function Home() {
     return ()=>{document.removeEventListener("keydown",close);document.body.classList.remove("modal-open")};
   },[selectedProduct]);
   const count = Object.values(cart).reduce((a,b)=>a+b,0);
-  const subtotal = products.reduce((s,p)=>s+(cart[p.id]||0)*p.price,0);
+  const subtotal = products.reduce((s,p)=>s+(cart[p.id]||0)*(p.price??0),0);
   const freeShippingTarget = 50;
   const freeShippingRemaining = Math.max(0,freeShippingTarget-subtotal);
   const freeShippingProgress = Math.min(100,(subtotal/freeShippingTarget)*100);
   const filtered = useMemo(()=>products.filter(p=>p.category===category&&p.name.toLowerCase().includes(query.toLowerCase())),[category,query]);
   const add=(id:number)=>{setCart(c=>({...c,[id]:(c[id]||0)+1}));setNotice("Added to cart");setTimeout(()=>setNotice(""),1400)};
   const viewProduct=(product:Product)=>{setSelectedProduct(product);setSelectedImage(0);setSelectedColor(colorOptions.find(c=>c.className===product.color)||colorOptions[0]);setDetailQty(1)};
-  const addConfigured=()=>{if(!selectedProduct)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedProduct.finish||selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
+  const addConfigured=()=>{if(!selectedProduct||selectedProduct.price===null)return;setCart(c=>({...c,[selectedProduct.id]:(c[selectedProduct.id]||0)+detailQty}));setCartColors(c=>({...c,[selectedProduct.id]:selectedProduct.finish||selectedColor.name}));setSelectedProduct(null);setNotice(`${detailQty} × ${selectedProduct.name} added`);setDrawer(true);setTimeout(()=>setNotice(""),1400)};
   const qty=(id:number,n:number)=>setCart(c=>{const next={...c}; if(n<=0) delete next[id]; else next[id]=n; return next});
   const confirmAge=()=>{
     setAgeConfirmed(true);
@@ -224,7 +291,7 @@ export default function Home() {
           <p>{selectedProduct.desc} Printed to order with durable PLA+ and finished with the distinctive layer texture that makes every piece feel designed, not mass-produced.</p>
           <div className="detail-points"><span>✓ Durable PLA+</span><span>✓ Ships in 2–4 days</span><span>✓ 30-day returns</span></div>
           {selectedProduct.finish?<div className="product-finish"><span>FINISH</span><b>{selectedProduct.finish}</b></div>:<fieldset><legend>COLOR — <b>{selectedColor.name}</b></legend><div className="swatches">{colorOptions.map(color=><button key={color.name} className={selectedColor.name===color.name?"selected":""} style={{background:color.value}} onClick={()=>setSelectedColor(color)} aria-label={`Choose ${color.name}`} aria-pressed={selectedColor.name===color.name}></button>)}</div></fieldset>}
-          <div className="detail-buy"><div className="detail-qty"><button onClick={()=>setDetailQty(q=>Math.max(1,q-1))} aria-label="Decrease quantity">−</button><span>{detailQty}</span><button onClick={()=>setDetailQty(q=>q+1)} aria-label="Increase quantity">+</button></div><button className="detail-add" onClick={addConfigured}>ADD TO BAG · {money(selectedProduct.price*detailQty)} →</button></div>
+          <div className="detail-buy">{selectedProduct.price===null?<button className="detail-add" disabled>COMING SOON</button>:<><div className="detail-qty"><button onClick={()=>setDetailQty(q=>Math.max(1,q-1))} aria-label="Decrease quantity">−</button><span>{detailQty}</span><button onClick={()=>setDetailQty(q=>q+1)} aria-label="Increase quantity">+</button></div><button className="detail-add" onClick={addConfigured}>ADD TO BAG · {money(selectedProduct.price*detailQty)} →</button></>}</div>
           <small className="detail-note">Free shipping on orders over $50.</small>
         </div>
       </section>
