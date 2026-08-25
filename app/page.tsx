@@ -117,7 +117,7 @@ const products: Product[] = [
   {id:119,name:"Turtle Stash Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:120,name:"TwistPod Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:121,name:"WaveGrip Keychain Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
-  {id:122,name:"Weed Skull Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:122,name:"Weed Skull Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/weed-skull-sleeve-1.webp","/products/weed-skull-sleeve-2.webp","/products/weed-skull-sleeve-3.webp"],imageAlt:"Metallic-gold Weed Skull lighter sleeve with raised skull, cannabis leaf, and flame details",imageFit:"cover",imageBackground:"light"},
   {id:123,name:"Wolf Lighter Display",category:"Stand",price:null,color:"black",desc:"Product details will be available soon."},
   {id:124,name:"Wolf Totem Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:125,name:"Xenomorph Alien Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
