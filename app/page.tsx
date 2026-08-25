@@ -66,7 +66,7 @@ const products: Product[] = [
   {id:68,name:"Harley Davidson Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:69,name:"Helix EDC Stasher",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:70,name:"Hiking Waterproof Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:71,name:"King Cobra Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:71,name:"King Cobra Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/king-cobra-sleeve-1.webp","/products/king-cobra-sleeve-2.webp","/products/king-cobra-sleeve-3.webp","/products/king-cobra-sleeve-4.webp"],imageAlt:"Pearl-white King Cobra lighter sleeve with a sculpted cobra head and coiled-body relief",imageFit:"cover",imageBackground:"light"},
   {id:72,name:"Lollipop Stash Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:73,name:"LV Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:74,name:"MagFlip Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
