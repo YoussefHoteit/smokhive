@@ -78,7 +78,7 @@ const products: Product[] = [
   {id:80,name:"Mini Outdoor Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:81,name:"Mini Stasher Capsule - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:82,name:"Mini Wheelie Bin",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:83,name:"Moai Stone Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:83,name:"Moai Stone Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/moai-stone-sleeve-1.webp","/products/moai-stone-sleeve-2.webp","/products/moai-stone-sleeve-3.webp"],imageAlt:"Stone-effect Moai head lighter sleeve with a speckled off-white finish",imageFit:"cover",imageBackground:"light"},
   {id:84,name:"Motorcycle Bowl",category:"Trays",price:null,color:"lime",desc:"Product details will be available soon."},
   {id:85,name:"Nautical Anchor Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:86,name:"Nomad Doob Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
