@@ -111,7 +111,7 @@ const products: Product[] = [
   {id:113,name:"Stealth Mini Stash",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:114,name:"Supreme Dual Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:115,name:"Swirly Cone Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:116,name:"Tactical Grenade Clipper Case*",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:116,name:"Tactical Grenade Clipper Case*",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/tactical-grenade-clipper-case-1.webp","/products/tactical-grenade-clipper-case-2.webp","/products/tactical-grenade-clipper-case-3.webp"],imageAlt:"Matte-black tactical grenade Clipper lighter case with a metallic pull ring",imageFit:"cover",imageBackground:"light"},
   {id:117,name:"Tactical Mag Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:118,name:"Toxic Biohazard Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:119,name:"Turtle Stash Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
