@@ -107,7 +107,7 @@ const products: Product[] = [
   {id:109,name:"Spartan Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:110,name:"Square Grip Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/square-grip-sleeve-1.webp","/products/square-grip-sleeve-2.webp","/products/square-grip-sleeve-3.webp","/products/square-grip-sleeve-4.webp"],imageAlt:"Metallic-magenta Square Grip lighter sleeve with a raised geometric block texture",imageFit:"cover",imageBackground:"light"},
   {id:111,name:"Stasher Family",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:112,name:"Stasher Pocket Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:112,name:"Stasher Pocket Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/stasher-pocket-case-1.webp","/products/stasher-pocket-case-2.webp","/products/stasher-pocket-case-3.webp"],imageAlt:"Matte-black Stasher Pocket Case with a fitted lighter channel, textured grip, and blue screw-top compartment",imageFit:"cover",imageBackground:"light"},
   {id:113,name:"Stealth Mini Stash",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:114,name:"Supreme Dual Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:115,name:"Swirly Cone Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
