@@ -274,7 +274,7 @@ export default function Home() {
           <span className="detail-sticker">MADE TO ORDER</span>
           {selectedProduct.images?<>
             <img className="detail-photo" src={selectedProduct.images[selectedImage]} alt={`${selectedProduct.imageAlt||selectedProduct.name}, view ${selectedImage+1} of ${selectedProduct.images.length}`}/>
-            {selectedProduct.images.length>1&&<div className="detail-arrows" role="group" aria-label="Product image navigation"><button type="button" className="detail-prev" onClick={()=>setSelectedImage(index=>(index+selectedProduct.images!.length-1)%selectedProduct.images!.length)} aria-label="Show previous product image">‹</button><button type="button" className="detail-next" onClick={()=>setSelectedImage(index=>(index+1)%selectedProduct.images!.length)} aria-label="Show next product image">›</button></div>}
+            {selectedProduct.images.length>1&&<div className="detail-arrows" role="group" aria-label="Product image navigation"><button type="button" className="detail-prev" onClick={()=>setSelectedImage(index=>Math.max(0,index-1))} disabled={selectedImage===0} aria-label="Show previous product image">‹</button><button type="button" className="detail-next" onClick={()=>setSelectedImage(index=>Math.min(selectedProduct.images!.length-1,index+1))} disabled={selectedImage===selectedProduct.images.length-1} aria-label="Show next product image">›</button></div>}
           </>:<div className="detail-shape"><span></span><span></span><span></span></div>}
           <small>{selectedProduct.images?`${selectedProduct.images.length} PRODUCT VIEWS`:"VISIBLE LAYER TEXTURE · PLA+"}</small>
         </div>
