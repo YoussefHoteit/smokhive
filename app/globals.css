@@ -333,16 +333,14 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 }
 
 
-/* Product gallery arrow navigation. */
-.detail-arrows{position:absolute;inset:0;z-index:3;pointer-events:none}
-.detail-arrows button{position:absolute;top:50%;width:48px;height:48px;transform:translateY(-50%);display:grid;place-items:center;border:2px solid var(--ink);background:rgba(246,248,250,.94);color:var(--ink);font:36px/1 Arial,sans-serif;cursor:pointer;pointer-events:auto;box-shadow:3px 3px 0 var(--ink)}
-.detail-arrows button:hover,.detail-arrows button:focus-visible{background:var(--lime);outline:2px solid var(--ink);outline-offset:3px}
-.detail-arrows .detail-prev{left:18px}
-.detail-arrows .detail-next{right:18px}
-.detail-arrows span{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);padding:7px 10px;border:2px solid var(--ink);background:rgba(246,248,250,.94);font:700 11px monospace;white-space:nowrap}
+/* Clean side controls for the product gallery. */
+.detail-art.has-photo>.detail-arrows{position:absolute;top:50%;left:0;right:0;height:0;z-index:4;pointer-events:none}
+.detail-art.has-photo>.detail-arrows button{position:absolute;top:0;width:42px;height:42px;transform:translateY(-50%);display:grid;place-items:center;padding:0;border:1px solid rgba(255,255,255,.72);border-radius:50%;background:rgba(16,24,40,.58);color:#fff;font:30px/1 Arial,sans-serif;cursor:pointer;pointer-events:auto;box-shadow:0 4px 18px rgba(16,24,40,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .18s ease,transform .18s ease}
+.detail-art.has-photo>.detail-arrows button:hover,.detail-art.has-photo>.detail-arrows button:focus-visible{background:rgba(16,24,40,.84);transform:translateY(-50%) scale(1.05);outline:2px solid #fff;outline-offset:2px}
+.detail-art.has-photo>.detail-arrows .detail-prev{left:14px}
+.detail-art.has-photo>.detail-arrows .detail-next{right:14px}
 @media(max-width:720px){
-  .detail-arrows button{width:50px;height:50px;font-size:38px}
-  .detail-arrows .detail-prev{left:12px}
-  .detail-arrows .detail-next{right:12px}
-  .detail-arrows span{bottom:12px}
+  .detail-art.has-photo>.detail-arrows button{width:40px;height:40px;font-size:28px}
+  .detail-art.has-photo>.detail-arrows .detail-prev{left:10px}
+  .detail-art.has-photo>.detail-arrows .detail-next{right:10px}
 }
