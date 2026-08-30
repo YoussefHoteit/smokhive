@@ -71,7 +71,7 @@ const products: Product[] = [
   {id:73,name:"LV Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:74,name:"MagFlip Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:75,name:"MagFlip Round Container",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:76,name:"Master 420  Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:76,name:"Master 420  Sleeve",category:"Lighter Sleeves",price:null,color:"black",image:"/products/master-420-sleeve-1.webp",images:["/products/master-420-sleeve-1.webp","/products/master-420-sleeve-2.webp","/products/master-420-sleeve-3.webp"],desc:"Product details will be available soon."},
   {id:77,name:"MedusaSleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:78,name:"MeshGrip Sleeve",category:"Lighter Sleeves",price:null,color:"pink",finish:"Blue Red Purple",desc:"Product details will be available soon."},
   {id:79,name:"Mickey Mouse Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
