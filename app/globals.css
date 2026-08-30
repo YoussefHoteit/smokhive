@@ -344,3 +344,5 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
   .detail-art.has-photo>.detail-arrows .detail-prev{left:10px}
   .detail-art.has-photo>.detail-arrows .detail-next{right:10px}
 }
+
+.detail-art.has-photo>.detail-arrows button:disabled{opacity:.2;cursor:default;pointer-events:none;box-shadow:none}
