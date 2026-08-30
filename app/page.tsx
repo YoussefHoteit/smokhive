@@ -147,7 +147,7 @@ export default function Home() {
     }
   },[]);
   useEffect(()=>{
-    document.body.style.overflow=ageConfirmed===true?"":"hidden";
+    document.body.style.overflow=ageConfirmed===false?"hidden":"";
     return ()=>{document.body.style.overflow=""};
   },[ageConfirmed]);
   useEffect(()=>{ try { setCart(JSON.parse(localStorage.getItem("smokhive-cart")||"{}")); } catch {} },[]);
@@ -176,7 +176,7 @@ export default function Home() {
     try { localStorage.setItem("smokhive-age-confirmed","yes"); } catch {}
   };
   return <main id="top">
-    {ageConfirmed!==true && <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-description">
+    {ageConfirmed===false && <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-description">
       <div className="age-gate-card">
         <span className="age-mark" aria-hidden="true">18+</span>
         <p className="age-kicker">AGE CHECK</p>
