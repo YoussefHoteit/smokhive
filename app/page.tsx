@@ -61,7 +61,7 @@ const products: Product[] = [
   {id:63,name:"Graveyard Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:64,name:"Grenade Sleeve*",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:65,name:"Grenade Stash Container*",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:66,name:"Grenade Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:66,name:"Grenade Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon.",images:["/products/grenade-stasher-keychain-1.jpeg?v=d7b0e80","/products/grenade-stasher-keychain-2.jpeg?v=d7b0e80"],imageAlt:"Olive-green grenade-shaped stash keychain with a grey safety lever and metal key ring",imageFit:"cover",imageBackground:"light"},
   {id:67,name:"Groovy Wave Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:68,name:"Harley Davidson Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:69,name:"Helix EDC Stasher",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
