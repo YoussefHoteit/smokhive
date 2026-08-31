@@ -43,7 +43,7 @@ const products: Product[] = [
   {id:44,name:"All-in-One Rolling Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:45,name:"All-in-One Smoke Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:46,name:"Biohazard Barrel",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:47,name:"BlazeGuard Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
+  {id:47,name:"BlazeGuard Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/blazeguard-case-1.jpeg"],imageAlt:"Blue BlazeGuard Case with a fitted lighter and screw-top storage compartment",imageFit:"cover",imageBackground:"light"},
   {id:48,name:"Cactus Stash Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:49,name:"Cone Loader Funnel",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:50,name:"Cyber Ronin Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/cyber-ronin-sleeve-1.jpeg","/products/cyber-ronin-sleeve-2.jpeg","/products/cyber-ronin-sleeve-3.jpeg","/products/cyber-ronin-sleeve-4.jpeg"],imageAlt:"Metallic-silver Cyber Ronin lighter sleeve with raised samurai armor details",imageFit:"cover",imageBackground:"light"},
