@@ -85,7 +85,7 @@ const products: Product[] = [
   {id:87,name:"Off-Road Tire Tray",category:"Trays",price:null,color:"lime",desc:"Product details will be available soon."},
   {id:88,name:"Pirate Skull Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/pirate-skull-sleeve-1.jpeg","/products/pirate-skull-sleeve-2.jpeg","/products/pirate-skull-sleeve-3.jpeg","/products/pirate-skull-sleeve-4.jpeg"],imageAlt:"Matte-black Pirate Skull lighter sleeve with raised eyepatch skull and crossed-sword details",imageFit:"cover",imageBackground:"light"},
   {id:89,name:"Pocket Rolling KIt",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
-  {id:90,name:"Pocket Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:90,name:"Pocket Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon.",images:["/products/pocket-stasher-1.jpeg?v=3f9da63","/products/pocket-stasher-2.jpeg?v=3f9da63","/products/pocket-stasher-3.jpeg?v=3f9da63"],imageAlt:"Olive-green Pocket Stasher container with a cream threaded lid",imageFit:"cover",imageBackground:"light"},
   {id:91,name:"Quad Doob Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:92,name:"Rolling Cross & Packer",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:93,name:"Rolling Essentials Organizer",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
