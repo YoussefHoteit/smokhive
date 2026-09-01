@@ -39,7 +39,7 @@ const products: Product[] = [
 
   {id:41,name:"420 Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:42,name:"50 BMG Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
-  {id:43,name:"Airtight Doob Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:43,name:"Airtight Doob Tube",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon.",images:["/products/airtight-doob-tube-1.jpeg","/products/airtight-doob-tube-2.jpeg","/products/airtight-doob-tube-3.jpeg","/products/airtight-doob-tube-4.jpeg"],imageAlt:"Silver Airtight Doob Tube with a textured cylindrical body and threaded cap",imageFit:"cover",imageBackground:"light"},
   {id:44,name:"All-in-One Rolling Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:45,name:"All-in-One Smoke Station",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:46,name:"Biohazard Barrel",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
