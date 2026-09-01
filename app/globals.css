@@ -372,3 +372,13 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
   .shop .product:hover .product-photo,.shop .product:focus-visible .product-photo{transform:translateZ(0) scale(1.002)}
   .shop .product:hover .shape,.shop .product:focus-visible .shape{transform:none}
 }
+
+/* Keep the zoom above legacy photo-cover transform resets. */
+.shop .product-art.photo-cover .product-photo{transform:translateZ(0) scale(1.002)}
+.shop .product:hover .product-art.photo-cover .product-photo,.shop .product:focus-visible .product-art.photo-cover .product-photo{transform:translateZ(0) scale(1.08)}
+@media(hover:none){
+  .shop .product:hover .product-art.photo-cover .product-photo{transform:translateZ(0) scale(1.002)}
+}
+@media(prefers-reduced-motion:reduce){
+  .shop .product:hover .product-art.photo-cover .product-photo,.shop .product:focus-visible .product-art.photo-cover .product-photo{transform:translateZ(0) scale(1.002)}
+}
