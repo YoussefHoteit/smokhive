@@ -346,3 +346,29 @@ footer{padding:30px 14px 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-ite
 }
 
 .detail-art.has-photo>.detail-arrows button:disabled{opacity:.2;cursor:default;pointer-events:none;box-shadow:none}
+
+/* Shop card image zoom and thumbnail anti-moire smoothing. */
+.shop .product-art{overflow:hidden}
+.shop .product-photo{
+  transform:translateZ(0) scale(1.002);
+  transform-origin:center;
+  backface-visibility:hidden;
+  image-rendering:auto;
+  filter:blur(.25px);
+  transition:transform .36s cubic-bezier(.2,.75,.25,1),filter .2s ease
+}
+.shop .product:hover .product-photo,.shop .product:focus-visible .product-photo{
+  transform:translateZ(0) scale(1.08);
+  filter:blur(.18px)
+}
+.shop .shape{transition:transform .36s cubic-bezier(.2,.75,.25,1)}
+.shop .product:hover .shape,.shop .product:focus-visible .shape{transform:scale(1.06)}
+@media(hover:none){
+  .shop .product:hover .product-photo{transform:translateZ(0) scale(1.002)}
+  .shop .product:hover .shape{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .shop .product-photo,.shop .shape{transition:none!important}
+  .shop .product:hover .product-photo,.shop .product:focus-visible .product-photo{transform:translateZ(0) scale(1.002)}
+  .shop .product:hover .shape,.shop .product:focus-visible .shape{transform:none}
+}
