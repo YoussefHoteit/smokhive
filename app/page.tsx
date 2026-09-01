@@ -98,7 +98,7 @@ const products: Product[] = [
   {id:100,name:"SlideLock Stasher",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:101,name:"Slim Roll Case",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon."},
   {id:102,name:"Slim Wolf Sleeve",category:"Lighter Sleeves",price:null,color:"black",desc:"Product details will be available soon.",images:["/products/slim-wolf-sleeve-1.jpeg","/products/slim-wolf-sleeve-2.jpeg","/products/slim-wolf-sleeve-3.jpeg","/products/slim-wolf-sleeve-4.jpeg"],imageAlt:"Black Slim Wolf lighter sleeve with sculpted wolf design"},
-  {id:103,name:"Smiley Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
+  {id:103,name:"Smiley Stasher - Keychain",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon.",images:["/products/smiley-stasher-keychain-1.jpeg","/products/smiley-stasher-keychain-2.jpeg","/products/smiley-stasher-keychain-3.jpeg"],imageAlt:"Two-tone green spherical Smiley Stasher keychain with a threaded lid and silver key ring",imageFit:"cover",imageBackground:"light"},
   {id:104,name:"Smoke Box",category:"Rolling Kits",price:null,color:"pink",desc:"Product details will be available soon."},
   {id:105,name:"SnapLock Mini Stash Box",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
   {id:106,name:"SnapLock Smoking Essentials Box",category:"Containers",price:null,color:"cream",desc:"Product details will be available soon."},
